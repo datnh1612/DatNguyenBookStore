@@ -7,7 +7,8 @@ namespace BookStoreModel.Models
     public class Footer
     {
         [Key]
-        public string ID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ID { get; set; }
 
         [Required]
         public string Content { get; set; }
