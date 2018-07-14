@@ -1,0 +1,9 @@
+﻿Note:
+1. Các lỗi thường gặp khi migration database
+
+- Kiểm tra các bảng có 2 khóa chính trở lên....
+Nếu có 2 khóa chính thì trước khóa phải thêm [Column (Order = 1,2,...)]
+- Kiểm tra kiểu dữ liệu của khóa chính và khóa ngoại được reference có khớp nhau ko
+Nếu không thì phải thêm trước property [Column(typeName= "varchar,int,byte")]
+- Trường hợp migration thành công nhưng update database ko được thì có thể do sai connection string
+,thiếu provider name, thiếu configsection hoặc đơn giản là do không đặt web config là starup project
