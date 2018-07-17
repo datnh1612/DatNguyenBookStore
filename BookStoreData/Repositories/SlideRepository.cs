@@ -3,7 +3,7 @@ using BookStoreModel.Models;
 
 namespace BookStoreData.Repositories
 {
-    public interface ISlideRepository
+    public interface ISlideRepository : IRepository<Slide>
     {
     }
 

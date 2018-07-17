@@ -3,7 +3,7 @@ using BookStoreModel.Models;
 
 namespace BookStoreData.Repositories
 {
-    public interface ITagRepository
+    public interface ITagRepository : IRepository<Tag>
     {
     }
 

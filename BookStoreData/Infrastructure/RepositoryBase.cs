@@ -33,9 +33,9 @@ namespace BookStoreData.Infrastructure
         }
 
         #region Implementation
-        public virtual void Add(T entity)
+        public virtual T Add(T entity)
         {
-            dbSet.Add(entity);
+            return dbSet.Add(entity);
         }
 
         public virtual void Update(T entity)
@@ -49,6 +49,18 @@ namespace BookStoreData.Infrastructure
             dbSet.Remove(entity);
         }
 
+        public virtual void Delete(int id)
+        {
+            var entity = dbSet.Find(id);
+            dbSet.Remove(entity);
+        }
+
+        public virtual void Delete(string id)
+        {
+            var entity = dbSet.Find(id);
+            dbSet.Remove(entity);
+        }
+
         public virtual void DeleteMulti(Expression<Func<T, bool>> where)
         {
             IEnumerable<T> objects = dbSet.Where<T>(where).AsEnumerable();
@@ -57,6 +69,11 @@ namespace BookStoreData.Infrastructure
         }
 
         public virtual T GetSingleByID(int id)
+        {
+            return dbSet.Find(id);
+        }
+
+        public virtual T GetSingleByID(string id)
         {
             return dbSet.Find(id);
         }

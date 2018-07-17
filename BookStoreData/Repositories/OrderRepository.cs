@@ -3,7 +3,7 @@ using BookStoreModel.Models;
 
 namespace BookStoreData.Repositories
 {
-    public interface IOrderRepository
+    public interface IOrderRepository : IRepository<Order>
     {
     }
 

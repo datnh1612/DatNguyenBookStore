@@ -52,5 +52,7 @@ namespace BookStoreModel.Models
         public bool? HotFlag { get; set; }
 
         public int? ViewCount { get; set; }
+
+        public virtual IEnumerable<ProductTag> ProductTags { get; set; }
     }
 }

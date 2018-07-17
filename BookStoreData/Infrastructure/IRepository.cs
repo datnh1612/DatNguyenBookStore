@@ -6,8 +6,9 @@ namespace BookStoreData.Infrastructure
 {
     public interface IRepository<T> where T : class
     {
+
         // Mark an entity as new
-        void Add(T entity);
+        T Add(T entity);
 
         // Mark an entity as modified
         void Update(T entity);
@@ -15,11 +16,17 @@ namespace BookStoreData.Infrastructure
         // Mark an entity to be removed
         void Delete(T entity);
 
+        void Delete(int id);
+
+        void Delete(string id);
+
         // Delete multi records
         void DeleteMulti(Expression<Func<T, bool>> where);
 
         // Get an entity by ID
         T GetSingleByID(int id);
+
+        T GetSingleByID(string id);
 
         T GetSingleByCondition(Expression<Func<T, bool>> expression, string[] includes = null);
 

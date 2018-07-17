@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookStoreData.Repositories
 {
-    public interface ISupportOnlineRepository
+    public interface ISupportOnlineRepository : IRepository<SupportOnline>
     {
     }
 

@@ -30,8 +30,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.0\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.2.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,7 +55,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ErrorService.cs" />
+    <Compile Include="FooterService.cs" />
+    <Compile Include="MenuGroupService.cs" />
+    <Compile Include="MenuService.cs" />
+    <Compile Include="OrderDetailService.cs" />
+    <Compile Include="OrderService.cs" />
+    <Compile Include="PageService.cs" />
+    <Compile Include="PostCategoryService.cs" />
+    <Compile Include="PostService.cs" />
+    <Compile Include="PostTagService.cs" />
+    <Compile Include="ProductCategoryService.cs" />
+    <Compile Include="ProductService.cs" />
+    <Compile Include="ProductTagService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SlideService.cs" />
+    <Compile Include="SupportOnlineService.cs" />
+    <Compile Include="SystemConfigService.cs" />
+    <Compile Include="TagService.cs" />
+    <Compile Include="VisitorStatisticService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookStoreData\BookStoreData.csproj">
+      <Project>{52175603-536E-4DEB-8F4A-7CE003FA78A2}</Project>
+      <Name>BookStoreData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BookStoreModel\BookStoreModel.csproj">
+      <Project>{C74B061E-4593-4F4D-8856-AE9CC486F9F6}</Project>
+      <Name>BookStoreModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
