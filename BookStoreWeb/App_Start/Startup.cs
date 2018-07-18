@@ -10,16 +10,22 @@ using BookStoreData.Repositories;
 using BookStoreServices;
 using System.Web.Mvc;
 using System.Web.Http;
+using static BookStoreWeb.App_Start.IdentityConfig;
+using System.Web;
+using Microsoft.Owin.Security.DataProtection;
+using Microsoft.AspNet.Identity;
+using BookStoreModel.Models;
 
 [assembly: OwinStartup(typeof(BookStoreWeb.App_Start.Startup))]
 
 namespace BookStoreWeb.App_Start
 {
-    public class Startup
+    public partial class Startup
     {
         public void Configuration(IAppBuilder app)
         {
             ConfigAutofac(app);
+            ConfigureAuth(app);
         }
 
         private void ConfigAutofac(IAppBuilder app)
@@ -33,6 +39,14 @@ namespace BookStoreWeb.App_Start
             builder.RegisterType<DbFactory>().As<IDbFactory>().InstancePerRequest();
 
             builder.RegisterType<DatNguyenBookStoreDBContext>().AsSelf().InstancePerRequest();
+
+            // ASP.NET Identity
+            builder.RegisterType<ApplicationUserStore>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
+            builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
+            builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();
+            builder.Register(c => HttpContext.Current.GetOwinContext().Authentication).InstancePerRequest();
+            builder.Register(c => app.GetDataProtectionProvider()).InstancePerRequest();
+
 
             // Repositories
             builder.RegisterAssemblyTypes(typeof(PostCategoryRepository).Assembly)

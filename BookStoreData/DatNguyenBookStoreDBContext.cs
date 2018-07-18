@@ -1,4 +1,5 @@
 ﻿using BookStoreModel.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BookStoreData
 {
-    public class DatNguyenBookStoreDBContext : DbContext
+    public class DatNguyenBookStoreDBContext : IdentityDbContext<ApplicationUser>
     {
         public DatNguyenBookStoreDBContext() : base("DatNguyenBookStoreConnection")
         {
@@ -34,9 +35,21 @@ namespace BookStoreData
         public DbSet<VisitorStatistic> VisitorStatistics { get; set; }
         public DbSet<Error> Errors { get; set; }
 
+        //After inheritance from IdentityDBContext we need a constructor method to init an instance DBcontext
+
+        public static DatNguyenBookStoreDBContext Create()
+        {
+            return new DatNguyenBookStoreDBContext();
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
+            // When you add indentity to project, there will be some table does'nt have
+            // key, so you need to create key for that tables in this override method before migration and
+            // update database
+
+            modelBuilder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId });
+            modelBuilder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
         }
     }
 }
