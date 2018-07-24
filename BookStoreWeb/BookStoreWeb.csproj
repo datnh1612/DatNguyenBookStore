@@ -210,6 +210,7 @@
   <ItemGroup>
     <Compile Include="API\AccountController.cs" />
     <Compile Include="API\PostCategoryController.cs" />
+    <Compile Include="API\ProductCategoryController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -223,6 +224,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Core\APIControllerBase.cs" />
+    <Compile Include="Infrastructure\Core\PaginationSet.cs" />
     <Compile Include="Infrastructure\Extensions\EntityExtension.cs" />
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
     <Compile Include="Models\ErrorViewModel.cs" />
@@ -1981,9 +1983,20 @@
     <Content Include="SPA\component\home\homeController.js" />
     <Content Include="SPA\component\home\homeView.html" />
     <Content Include="SPA\component\products\product.module.js" />
+    <Content Include="SPA\component\products\productAddControlller.js" />
+    <Content Include="SPA\component\products\productAddView.html" />
+    <Content Include="SPA\component\products\productEditController.js" />
+    <Content Include="SPA\component\products\productEditView.html" />
     <Content Include="SPA\component\products\productListView.html" />
-    <Content Include="SPA\component\products\productListViewController.js" />
+    <Content Include="SPA\component\products\productListController.js" />
+    <Content Include="SPA\component\product_categories\productCategories.module.js" />
+    <Content Include="SPA\component\product_categories\productCategoryListController.js" />
+    <Content Include="SPA\component\product_categories\productCategoryListView.html" />
+    <Content Include="SPA\shared\directives\pagerDirective.html" />
+    <Content Include="SPA\shared\directives\pagerDirective.js" />
+    <Content Include="SPA\shared\filter\statusFilter.js" />
     <Content Include="SPA\shared\module\datnguyenbookstore.common.js" />
+    <Content Include="SPA\shared\services\apiService.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1998,13 +2011,10 @@
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="SPA\component\orders\" />
     <Folder Include="SPA\component\posts\" />
-    <Folder Include="SPA\component\product_categories\" />
     <Folder Include="SPA\component\roles\" />
     <Folder Include="SPA\component\users\" />
-    <Folder Include="SPA\shared\directive\" />
     <Folder Include="SPA\shared\footer\" />
     <Folder Include="SPA\shared\navigation\" />
-    <Folder Include="SPA\shared\services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

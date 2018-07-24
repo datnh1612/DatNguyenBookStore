@@ -2,7 +2,13 @@
 
 (function () {
     //define module for routing, this is root module
-    angular.module('datnguyenbookstore', ['datnguyenbookstore.common']).config(config);
+    angular.module('datnguyenbookstore',
+        [
+            'datnguyenbookstore.products',
+            'datnguyenbookstore.product_categories',
+            'datnguyenbookstore.common'
+        ]
+    ).config(config);
 
     //inject services of angular-ui-router, this service use for config routing for this function below
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
@@ -14,5 +20,7 @@
             templateUrl: "/SPA/component/home/homeView.html",
             controller: "homeController"
         });
+        //default state
+        $urlRouterProvider.otherwise('/admin');
     }
-})
+})();

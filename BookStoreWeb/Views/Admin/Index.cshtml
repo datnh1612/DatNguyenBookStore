@@ -26,7 +26,7 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" ng-app="datnguyenbookstore">
     <!-- Site wrapper -->
     <div class="wrapper">
         <header class="main-header">
@@ -219,24 +219,18 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
-                        <ul class="treeview-menu">
-                            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-                        </ul>
                     </li>
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-files-o"></i>
-                            <span>Layout Options</span>
+                            <span>Sản phẩm</span>
                             <span class="pull-right-container">
                                 <span class="label label-primary pull-right">4</span>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                            <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                            <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                            <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                            <li><a ui-sref="productCategories"><i class="fa fa-circle-o"></i>Danh mục sản phẩm</a></li>
+                            <li><a ui-sref="products"><i class="fa fa-circle-o"></i>Danh sách sản phẩm</a></li>
                         </ul>
                     </li>
                     <li>
@@ -389,7 +383,7 @@
         <!-- =============================================== -->
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-
+            <div ui-view></div>
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
@@ -584,6 +578,21 @@
     <script src="~/Assets/admin/libs/angular/angular.js"></script>
     <!-- Angular UI router-->
     <script src="~/Assets/admin/libs/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <!-- AngularJS Front-end-->
+    <script src="~/SPA/shared/module/datnguyenbookstore.common.js"></script>
+    <script src="~/SPA/shared/services/apiService.js"></script>
+    <script src="~/SPA/component/products/product.module.js"></script>
+    <script src="~/SPA/component/product_categories/productCategories.module.js"></script>
+    <script src="~/SPA/shared/directives/pagerDirective.js"></script>
+    <script src="~/SPA/shared/filter/statusFilter.js"></script>
+    <script src="~/SPA/app.js"></script>
+    <script src="~/SPA/component/product_categories/productCategoryListController.js"></script>
+    <script src="~/SPA/component/products/productAddControlller.js"></script>
+    <script src="~/SPA/component/products/productEditController.js"></script>
+    <script src="~/SPA/component/products/productListController.js"></script>
+    <script src="~/SPA/component/home/homeController.js"></script>
+
 
     <script>
         $(document).ready(function () {

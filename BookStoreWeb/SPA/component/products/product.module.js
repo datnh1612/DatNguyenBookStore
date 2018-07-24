@@ -1,13 +1,17 @@
-﻿(function () {
-    angular.module('datnguyenbookstore.products', ['datnguyenbookstore.common']).config(config);
+﻿/// <reference path="../../../assets/admin/libs/angular/angular.js" />
 
-    config.$inject('$stateProvider', '$urlRouterProvider');
+(function () {
+    angular.module('datnguyenbookstore.products', ['datnguyenbookstore.common']).config(config);
 
     function config($stateProvider, $urlRouterProvider) {
         $stateProvider.state('products', {
             url: '/products',
             templateUrl: '/SPA/component/products/productListView.html',
-            controller: 'productListViewController'
+            controller: 'productListController'
+        }).state('product_add', {
+            url: '/product_add',
+            templateUrl: '/SPA/component/products/productAddView.html',
+            controller: 'productAddController'
         });
     }
-});
+})();
