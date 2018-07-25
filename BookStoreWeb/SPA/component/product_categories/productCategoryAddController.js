@@ -1,27 +1,29 @@
 ﻿(function (app) {
     app.controller('productCategoryAddController', productCategoryAddController);
 
-    productCategoryAddController.$inject = ['apiService','$scope','notificationService'];
+    productCategoryAddController.$inject = ['apiService','$scope','notificationService','$state','commonService'];
 
-    function productCategoryAddController(apiService,$scope,notificationService) {
+    function productCategoryAddController(apiService,$scope,notificationService,$state,commonService) {
         $scope.productCategory = {
-            CreateDate: new Date(),
             Status: true
         }
 
         $scope.parentCategories = [];
 
-        function AddProductCategory() {
-            var config = {
-                params: {
-                    productCategoryViewModel: $scope.productCategory
-                }
-            }
+        $scope.AddProductCategory = AddProductCategory;
 
-            apiService.post('api/productcategory/post', config, function (result) {
+        $scope.GetSeoTitle = GetSeoTitle;
+
+        function GetSeoTitle() {
+            $scope.productCategory.Alias = commonService.getSeoTitle($scope.productCategory.Name);
+        }
+
+        function AddProductCategory() {
+            apiService.post('api/productcategory/create', $scope.productCategory, function (result) {
                 notificationService.displaySuccess('Thêm mới thành công')
+                $state.go('productCategories');
             }, function (error) {
-                notificationService.displayWarning('Thêm mới thất bại')
+                notificationService.displayError('Thêm mới thất bại')
             });
         }
 

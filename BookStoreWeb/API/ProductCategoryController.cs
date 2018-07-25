@@ -16,6 +16,8 @@ namespace BookStoreWeb.API
     [RoutePrefix("api/productcategory")]
     public class ProductCategoryController : APIControllerBase
     {
+        #region Initialize
+
         IProductCategoryService _productCategoryService;
 
         public ProductCategoryController(IErrorService errorService, IProductCategoryService productCategoryService) :
@@ -23,6 +25,8 @@ namespace BookStoreWeb.API
         {
             this._productCategoryService = productCategoryService;
         }
+
+        #endregion
 
         [Route("getallparent")]
         [HttpGet]
@@ -33,6 +37,22 @@ namespace BookStoreWeb.API
                 var model = _productCategoryService.GetAll();
 
                 var responseData = Mapper.Map<List<ProductCategoryViewModel>>(model);
+
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, responseData);
+
+                return response;
+            });
+        }
+
+        [Route("getbyid/{id:int}")]
+        [HttpGet]
+        public HttpResponseMessage GetById(HttpRequestMessage request,int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _productCategoryService.GetByID(id);
+
+                var responseData = Mapper.Map<ProductCategoryViewModel>(model);
 
                 HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, responseData);
 
@@ -86,11 +106,43 @@ namespace BookStoreWeb.API
                     ProductCategory newProductCategory = new ProductCategory();
                     newProductCategory.UpdateProductCategory(productCategoryViewModel);
 
+                    newProductCategory.CreateDate = DateTime.Now;
+
                     _productCategoryService.Add(newProductCategory);
                     _productCategoryService.SaveChanges();
 
                     var responseData = Mapper.Map<ProductCategoryViewModel>(newProductCategory);
                     response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                }
+
+                return response;
+            });
+        }
+
+        [Route("update")]
+        [HttpPut]
+        public HttpResponseMessage Update(HttpRequestMessage request, ProductCategoryViewModel productCategoryViewModel)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    ProductCategory dbProductCategory = _productCategoryService.GetByID(productCategoryViewModel.ID);
+                    dbProductCategory.UpdateProductCategory(productCategoryViewModel);
+
+                    dbProductCategory.UpdateDate = DateTime.Now;
+
+                    _productCategoryService.Update(dbProductCategory);
+                    _productCategoryService.SaveChanges();
+
+                    var responseData = Mapper.Map<ProductCategoryViewModel>(dbProductCategory);
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
 
                 return response;
