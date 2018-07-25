@@ -251,6 +251,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\admin\libs\toastr\toastr.css" />
+    <Content Include="Assets\admin\libs\toastr\toastr.js" />
+    <Content Include="Assets\admin\libs\toastr\toastr.min.css" />
+    <Content Include="Assets\admin\libs\toastr\toastr.min.js" />
     <Content Include="SPA\app.js" />
     <Content Include="Assets\admin\css\AdminLTE.css" />
     <Content Include="Assets\admin\css\AdminLTE.min.css" />
@@ -1990,6 +1994,8 @@
     <Content Include="SPA\component\products\productListView.html" />
     <Content Include="SPA\component\products\productListController.js" />
     <Content Include="SPA\component\product_categories\productCategories.module.js" />
+    <Content Include="SPA\component\product_categories\productCategoryAddController.js" />
+    <Content Include="SPA\component\product_categories\productCategoryAddView.html" />
     <Content Include="SPA\component\product_categories\productCategoryListController.js" />
     <Content Include="SPA\component\product_categories\productCategoryListView.html" />
     <Content Include="SPA\shared\directives\pagerDirective.html" />
@@ -1997,6 +2003,7 @@
     <Content Include="SPA\shared\filter\statusFilter.js" />
     <Content Include="SPA\shared\module\datnguyenbookstore.common.js" />
     <Content Include="SPA\shared\services\apiService.js" />
+    <Content Include="SPA\shared\services\notificationService.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2220,6 +2227,12 @@
     <Content Include="Assets\admin\libs\fastclick\bower.json" />
     <Content Include="Assets\admin\libs\fastclick\LICENSE" />
     <Content Include="Assets\admin\libs\fastclick\README.md" />
+    <Content Include="Assets\admin\libs\toastr\.bower.json" />
+    <Content Include="Assets\admin\libs\toastr\bower.json" />
+    <Content Include="Assets\admin\libs\toastr\README.md" />
+    <Content Include="Assets\admin\libs\toastr\toastr.js.map" />
+    <Content Include="Assets\admin\libs\toastr\toastr.less" />
+    <Content Include="Assets\admin\libs\toastr\toastr.scss" />
     <None Include="bin\BookStoreWeb.dll.config" />
     <Content Include="bin\roslyn\csc.exe.config" />
     <Content Include="bin\roslyn\csc.rsp" />

@@ -8,6 +8,10 @@
             url: '/productCategories',
             templateUrl: '/SPA/component/product_categories/productCategoryListView.html',
             controller: 'productCategoryListController'
+        }).state('productCategoryAdd', {
+            url: '/productCategoryAdd',
+            templateUrl: '/SPA/component/product_categories/productCategoryAddView.html',
+            controller: 'productCategoryAddController'
         });
     }
 })();

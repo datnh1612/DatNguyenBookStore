@@ -1,11 +1,10 @@
 ﻿ <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Home page
-        <small>This is homepage</small>
+        Danh mục sản phẩm
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
         <li><a href="#">Sản phẩm</a></li>
         <li class="active">Danh mục sản phẩm</li>
     </ol>
@@ -27,6 +26,19 @@
             </div>
         </div>
         <div class="box-body">
+            <di class="row">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input class="form-control" type="text" ng-model="keyword" placeholder="Tìm kiếm..." />
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" ng-click="search()" type="button"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-success" ui-sref="productCategoryAdd" >Thêm mới</button>
+                </div>
+            </di>
             <div class="row">
                 <div class="col-md-12">
                     <table class="table table-bordered">
@@ -53,6 +65,13 @@
                                 <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                             </td>
                         </tr>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5">
+                                    Tổng số kết quả tìm kiếm : {{totalCount}}
+                                </td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>

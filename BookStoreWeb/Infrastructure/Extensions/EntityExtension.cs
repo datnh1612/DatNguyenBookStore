@@ -30,6 +30,25 @@ namespace BookStoreWeb.Infrastructure.Extensions
             postCategory.Status = postCategoryViewModel.Status;
         }
 
+        public static void UpdateProductCategory(this ProductCategory productCategory, ProductCategoryViewModel productCategoryViewModel)
+        {
+            productCategory.ID = productCategoryViewModel.ID;
+            productCategory.Name = productCategoryViewModel.Name;
+            productCategory.Description = productCategoryViewModel.Description;
+            productCategory.Alias = productCategoryViewModel.Alias;
+            productCategory.DisplayOrder = productCategoryViewModel.DisplayOrder;
+            productCategory.ParentID = productCategoryViewModel.ParentID;
+            productCategory.Image = productCategoryViewModel.Image;
+            productCategory.HomeFlag = productCategoryViewModel.HomeFlag;
+            productCategory.CreateDate = productCategoryViewModel.CreateDate;
+            productCategory.CreateBy = productCategoryViewModel.CreateBy;
+            productCategory.UpdateDate = productCategoryViewModel.UpdateDate;
+            productCategory.UpdateBy = productCategoryViewModel.UpdateBy;
+            productCategory.MetaKeyword = productCategoryViewModel.MetaKeyword;
+            productCategory.MetaDescription = productCategoryViewModel.MetaDescription;
+            productCategory.Status = productCategoryViewModel.Status;
+        }
+
         public static void UpdatePost(this Post post, PostViewModel postViewModel)
         {
             post.ID = postViewModel.ID;
