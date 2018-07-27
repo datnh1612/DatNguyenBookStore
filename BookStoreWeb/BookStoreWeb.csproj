@@ -251,6 +251,26 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\admin\css\custom.css" />
+    <Content Include="Assets\admin\libs\angular-spinners\dist\angular-spinners.js" />
+    <Content Include="Assets\admin\libs\angular-spinners\dist\angular-spinners.min.js" />
+    <Content Include="Assets\admin\libs\angular-spinners\gulpfile.js" />
+    <Content Include="Assets\admin\libs\angular-spinners\src\spinner-directive.js" />
+    <Content Include="Assets\admin\libs\angular-spinners\src\spinner-service.js" />
+    <Content Include="Assets\admin\libs\bootbox\.gitignore" />
+    <Content Include="Assets\admin\libs\bootbox\bootbox.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\dist\ngBootbox.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\dist\ngBootbox.min.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-1\app.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-1\custom-dialog.tpl.html" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-1\index.html" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-2\app.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-2\index.html" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-2\main.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-2\require.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\index.html" />
+    <Content Include="Assets\admin\libs\ngBootbox\gulpfile.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\ngBootbox.js" />
     <Content Include="Assets\admin\libs\toastr\toastr.css" />
     <Content Include="Assets\admin\libs\toastr\toastr.js" />
     <Content Include="Assets\admin\libs\toastr\toastr.min.css" />
@@ -2236,6 +2256,24 @@
     <Content Include="Assets\admin\libs\toastr\toastr.js.map" />
     <Content Include="Assets\admin\libs\toastr\toastr.less" />
     <Content Include="Assets\admin\libs\toastr\toastr.scss" />
+    <Content Include="Assets\admin\libs\angular-spinners\.npmignore" />
+    <Content Include="Assets\admin\libs\angular-spinners\bower.json" />
+    <Content Include="Assets\admin\libs\angular-spinners\package.json" />
+    <Content Include="Assets\admin\libs\angular-spinners\README.md" />
+    <Content Include="Assets\admin\libs\ngBootbox\.bower.json" />
+    <Content Include="Assets\admin\libs\ngBootbox\bower.json" />
+    <Content Include="Assets\admin\libs\ngBootbox\package.json" />
+    <Content Include="Assets\admin\libs\ngBootbox\README.md" />
+    <Content Include="Assets\admin\libs\ngBootbox\tsd.json" />
+    <Content Include="Assets\admin\libs\bootbox\.bower.json" />
+    <Content Include="Assets\admin\libs\bootbox\.jshintrc" />
+    <Content Include="Assets\admin\libs\bootbox\.npmignore" />
+    <Content Include="Assets\admin\libs\bootbox\.travis.yml" />
+    <Content Include="Assets\admin\libs\bootbox\bower.json" />
+    <Content Include="Assets\admin\libs\bootbox\CONTRIBUTING.md" />
+    <Content Include="Assets\admin\libs\bootbox\LICENSE.md" />
+    <Content Include="Assets\admin\libs\bootbox\package.json" />
+    <Content Include="Assets\admin\libs\bootbox\README.md" />
     <None Include="bin\BookStoreWeb.dll.config" />
     <Content Include="bin\roslyn\csc.exe.config" />
     <Content Include="bin\roslyn\csc.rsp" />
@@ -2271,6 +2309,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\tsd.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
