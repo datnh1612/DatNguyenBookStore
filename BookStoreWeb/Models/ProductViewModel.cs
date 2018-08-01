@@ -51,6 +51,8 @@ namespace BookStoreWeb.Models
 
         public string MetaDescription { get; set; }
 
+        public string Tags { get; set; }
+
         public bool Status { get; set; }
     }
 }

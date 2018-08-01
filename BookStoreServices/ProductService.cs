@@ -19,6 +19,8 @@ namespace BookStoreServices
 
         IEnumerable<Product> GetAll();
 
+        IEnumerable<Product> GetAll(string keyword);
+
         IEnumerable<Product> GetAllPaging(int page, int pageSize, out int totalRow);
 
         Product GetByID(int id);
@@ -51,6 +53,13 @@ namespace BookStoreServices
         public IEnumerable<Product> GetAll()
         {
             return _productRepository.GetAll(new string[] { "ProductCategory" });
+        }
+
+        public IEnumerable<Product> GetAll(string keyword)
+        {
+            if (!string.IsNullOrEmpty(keyword))
+                return _productRepository.GetMulti(x => x.Name.Contains(keyword) || x.Description.Contains(keyword) || x.Alias.Contains(keyword));
+            return _productRepository.GetAll();
         }
 
         public IEnumerable<Product> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow)

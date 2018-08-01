@@ -8,7 +8,7 @@
             url: '/products',
             templateUrl: '/SPA/component/products/productListView.html',
             controller: 'productListController'
-        }).state('product_add', {
+        }).state('productAdd', {
             url: '/product_add',
             templateUrl: '/SPA/component/products/productAddView.html',
             controller: 'productAddController'

@@ -92,6 +92,14 @@
     <Compile Include="Migrations\201807180656095_ChangeKey-dbo.UserRole.Designer.cs">
       <DependentUpon>201807180656095_ChangeKey-dbo.UserRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807270823139_AddProductData.cs" />
+    <Compile Include="Migrations\201807270823139_AddProductData.Designer.cs">
+      <DependentUpon>201807270823139_AddProductData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807310847513_AddTagField.cs" />
+    <Compile Include="Migrations\201807310847513_AddTagField.Designer.cs">
+      <DependentUpon>201807310847513_AddTagField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
@@ -135,6 +143,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807180656095_ChangeKey-dbo.UserRole.resx">
       <DependentUpon>201807180656095_ChangeKey-dbo.UserRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807270823139_AddProductData.resx">
+      <DependentUpon>201807270823139_AddProductData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807310847513_AddTagField.resx">
+      <DependentUpon>201807310847513_AddTagField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

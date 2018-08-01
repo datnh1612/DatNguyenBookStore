@@ -40,6 +40,8 @@ namespace BookStoreModel.Models
 
         public decimal? PromotionPrice { get; set; }
 
+        public string Tags { get; set; }
+
         public int? Warranty { get; set; }
 
         [MaxLength(500)]

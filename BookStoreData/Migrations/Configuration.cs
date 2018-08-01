@@ -58,14 +58,26 @@
             if (dBContext.ProductCategories.Count() == 0)
             {
                 List<ProductCategory> listProductCategory = new List<ProductCategory>()
-            {
+                {
                 new ProductCategory(){Name="Điện lạnh",Alias="dien-lanh",Status=true},
                 new ProductCategory(){Name="Viễn thông",Alias="vien-thong",Status=true},
                 new ProductCategory(){Name="Đồ gia dụng",Alias="do-gia-dung",Status=true},
                 new ProductCategory(){Name="Mỹ phẩm",Alias="my-pham",Status=true}
-            };
+                };
 
                 dBContext.ProductCategories.AddRange(listProductCategory);
+                dBContext.SaveChanges();
+            }
+
+            if (dBContext.Products.Count() == 0)
+            {
+                List<Product> listProduct = new List<Product>()
+                {
+                    new Product(){ Name="Tủ lạnh panasonic 2017",Alias = "tu-lanh-panasonic-2017",CategoryID = 1,Status=true,Price=6090000},
+                    new Product(){ Name="Iphone X",Alias = "iphone-x",CategoryID = 2,Status = true,Price = 30000000},
+                    new Product(){ Name="Bếp từ sunhouse",Alias = "bep-tu-sunhouse",CategoryID = 3,Status = true,Price = 2000000}
+                };
+                dBContext.Products.AddRange(listProduct);
                 dBContext.SaveChanges();
             }
         }
