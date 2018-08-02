@@ -41,7 +41,7 @@ namespace BookStoreWeb.Infrastructure.Core
                     }
                 }
                 LogError(ex);
-                response = requestMessage.CreateResponse(HttpStatusCode.BadRequest, ex.InnerException.Message);
+                //response = requestMessage.CreateResponse(HttpStatusCode.BadRequest, ex.InnerException.Message);
             }
             //Catch db Error
             catch (DbUpdateException dbEX)

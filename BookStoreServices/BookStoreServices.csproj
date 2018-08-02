@@ -76,6 +76,10 @@
     <Compile Include="VisitorStatisticService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BookStoreCommon\BookStoreCommon.csproj">
+      <Project>{9B4629C7-5220-4450-9F46-F6A527C3A131}</Project>
+      <Name>BookStoreCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BookStoreData\BookStoreData.csproj">
       <Project>{52175603-536E-4DEB-8F4A-7CE003FA78A2}</Project>
       <Name>BookStoreData</Name>

@@ -53,6 +53,8 @@ namespace BookStoreModel.Models
 
         public int? ViewCount { get; set; }
 
+        public string Tags { get; set; }
+
         public virtual IEnumerable<ProductTag> ProductTags { get; set; }
     }
 }
