@@ -6,10 +6,12 @@
     function config($stateProvider, $urlRouterProvider) {
         $stateProvider.state('products', {
             url: '/products',
+            parent:'base',
             templateUrl: '/SPA/component/products/productListView.html',
             controller: 'productListController'
         }).state('productAdd', {
             url: '/product_add',
+            parent:'base',
             templateUrl: '/SPA/component/products/productAddView.html',
             controller: 'productAddController'
         }).state('productEdit', {

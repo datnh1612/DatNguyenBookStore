@@ -25,6 +25,7 @@
         }
 
         function AddProduct() {
+            $scope.product.MoreImages = JSON.stringify($scope.moreImages);
             apiService.post('api/product/create', $scope.product, function (result) {
                 notificationService.displaySuccess('Thêm mới thành công')
                 $state.go('products');
@@ -42,10 +43,24 @@
         }
         $scope.ChooseImage = function () {
             var finder = new CKFinder();
-            finder.selectActionFunction = function (fireUrl) {
-                $scope.product.Image = fireUrl;
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.$apply(function () {
+                    $scope.product.Image = fileUrl;
+                });
             }
             finder.popup(); 
+        }
+
+        $scope.moreImages = [];
+
+        $scope.ChooseMoreImage = function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.$apply(function () {
+                    $scope.moreImages.push(fileUrl);
+                });
+            }
+            finder.popup();
         }
         loadProductCategory();
     }

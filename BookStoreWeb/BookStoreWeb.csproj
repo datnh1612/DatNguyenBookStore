@@ -5515,6 +5515,9 @@
     <Content Include="obj\Debug\BookStoreWeb.pdb" />
     <Content Include="SPA\component\home\homeController.js" />
     <Content Include="SPA\component\home\homeView.html" />
+    <Content Include="SPA\component\home\rootController.js" />
+    <Content Include="SPA\component\login\loginController.js" />
+    <Content Include="SPA\component\login\loginView.html" />
     <Content Include="SPA\component\products\product.module.js" />
     <Content Include="SPA\component\products\productAddControlller.js" />
     <Content Include="SPA\component\products\productAddView.html" />
@@ -5536,6 +5539,7 @@
     <Content Include="SPA\shared\services\apiService.js" />
     <Content Include="SPA\shared\services\commonService.js" />
     <Content Include="SPA\shared\services\notificationService.js" />
+    <Content Include="SPA\shared\views\baseView.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

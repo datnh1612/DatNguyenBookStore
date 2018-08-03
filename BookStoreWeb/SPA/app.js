@@ -17,10 +17,19 @@
     function config($stateProvider, $urlRouterProvider) {
         $stateProvider.state('home', {
             url: "/admin",
+            parent:'base',
             templateUrl: "/SPA/component/home/homeView.html",
             controller: "homeController"
+        }).state('base', {
+            url: '',
+            templateUrl: "/SPA/shared/views/baseView.html",
+            abstract: true
+        }).state('login', {
+            url: '/login',
+            templateUrl: '/SPA/component/login/loginView.html',
+            controller:'loginController'
         });
         //default state
-        $urlRouterProvider.otherwise('/admin');
+        $urlRouterProvider.otherwise('/login');
     }
 })();

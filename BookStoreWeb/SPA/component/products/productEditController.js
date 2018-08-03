@@ -6,6 +6,8 @@
     function productEditController(apiService, $scope, notificationService, $state, $stateParams, commonService) {
         $scope.product = {}
 
+        $scope.moreImages = [];
+
         $scope.productCategories = [];
 
         $scope.UpdateProduct = UpdateProduct;
@@ -24,12 +26,14 @@
         function loadProductDetail() {
             apiService.get('api/product/getbyid/' + $stateParams.id, null, function (result) {
                 $scope.product = result.data;
+                $scope.moreImages = JSON.parse($scope.product.MoreImages);
             }, function (error) {
                 notificationService.displayError(error.data);
             });
         }
 
         function UpdateProduct() {
+            $scope.product.MoreImages = JSON.stringify($scope.moreImages);
             apiService.put('api/product/update', $scope.product, function (result) {
                 notificationService.displaySuccess('Cập nhập thành công')
                 $state.go('products');
@@ -48,8 +52,20 @@
 
         $scope.ChooseImage = function () {
             var finder = new CKFinder();
-            finder.selectActionFunction = function (fireUrl) {
-                $scope.product.Image = fireUrl;
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.$apply(function () {
+                    $scope.product.Image = fileUrl;
+                });
+            }
+            finder.popup();
+        }
+
+        $scope.ChooseMoreImage = function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.$apply(function () {
+                    $scope.moreImages.push(fileUrl);
+                });
             }
             finder.popup();
         }
