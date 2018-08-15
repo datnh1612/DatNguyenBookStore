@@ -16,6 +16,7 @@
             controller: 'productAddController'
         }).state('productEdit', {
             url: '/product_edit/:id',
+            parent: 'base',
             templateUrl: '/SPA/component/products/productEditView.html',
             controller: 'productEditController'
         });

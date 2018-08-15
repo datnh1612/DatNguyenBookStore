@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="~/Assets/admin/libs/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="~/Assets/admin/css/AdminLTE.min.css">
+    <!-- Loading Bar-->
+    <link href="~/Assets/admin/libs/angular-loading-bar/build/loading-bar.css" rel="stylesheet" />
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="~/Assets/admin/css/skins/_all-skins.min.css">
@@ -31,7 +33,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini" ng-app="datnguyenbookstore" ng-controller="rootController">
+    
     <div ui-view></div>
+
+
+    <!-- Start Script-->
     <!-- jQuery 3 -->
     <script src="~/Assets/admin/libs/jquery/dist/jquery.js"></script>
     <!-- Bootstrap 3.3.7 -->
@@ -60,27 +66,36 @@
     <script src="~/Assets/admin/libs/bootbox/bootbox.js"></script>
     <!-- ngCKEditor-->
     <script src="~/Assets/admin/libs/ng-ckeditor/ng-ckeditor.js"></script>
-
+    <!-- Angular Loading Bar-->
+    <script src="~/Assets/admin/libs/angular-loading-bar/build/loading-bar.js"></script>
+    <!-- Angular Local Storage-->
+    <script src="~/Assets/admin/libs/angular-local-storage/dist/angular-local-storage.js"></script>
     <!-- AngularJS Front-end-->
     <script src="~/SPA/shared/module/datnguyenbookstore.common.js"></script>
+    <script src="~/SPA/shared/filter/statusFilter.js"></script>
     <script src="~/SPA/shared/services/apiService.js"></script>
-    <script src="~/SPA/component/products/product.module.js"></script>
-    <script src="~/SPA/shared/services/commonService.js"></script>
-    <script src="~/SPA/component/product_categories/productCategories.module.js"></script>
-    <script src="~/SPA/component/product_categories/productCategoryAddController.js"></script>
-    <script src="~/SPA/component/product_categories/productCategoryEditController.js"></script>
     <script src="~/SPA/shared/directives/pagerDirective.js"></script>
     <script src="~/SPA/shared/services/notificationService.js"></script>
-    <script src="~/SPA/shared/filter/statusFilter.js"></script>
+    <script src="~/SPA/shared/services/authData.js"></script>
+    <script src="~/SPA/shared/services/authenticationService.js"></script>
+    <script src="~/SPA/shared/services/loginService.js"></script>
+    <script src="~/SPA/shared/services/commonService.js"></script>
+    <script src="~/SPA/component/products/product.module.js"></script>
+    <script src="~/SPA/component/product_categories/productCategories.module.js"></script>
+
+
     <script src="~/SPA/app.js"></script>
+    <script src="~/SPA/component/home/rootController.js"></script>
+
     <script src="~/SPA/component/product_categories/productCategoryListController.js"></script>
+    <script src="~/SPA/component/product_categories/productCategoryAddController.js"></script>
+    <script src="~/SPA/component/product_categories/productCategoryEditController.js"></script>
     <script src="~/SPA/component/products/productAddControlller.js"></script>
     <script src="~/SPA/component/products/productEditController.js"></script>
     <script src="~/SPA/component/products/productListController.js"></script>
     <script src="~/SPA/component/home/homeController.js"></script>
     <script src="~/SPA/component/login/loginController.js"></script>
-    <script src="~/SPA/component/home/rootController.js"></script>
-    <!-->ăn lol nhé</!-->
+    <!--End script-->
 
 
     <script>

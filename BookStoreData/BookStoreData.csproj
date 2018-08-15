@@ -92,6 +92,10 @@
     <Compile Include="Migrations\201807180656095_ChangeKey-dbo.UserRole.Designer.cs">
       <DependentUpon>201807180656095_ChangeKey-dbo.UserRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808140745147_AddUserBatman.cs" />
+    <Compile Include="Migrations\201808140745147_AddUserBatman.Designer.cs">
+      <DependentUpon>201808140745147_AddUserBatman.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
@@ -135,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807180656095_ChangeKey-dbo.UserRole.resx">
       <DependentUpon>201807180656095_ChangeKey-dbo.UserRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808140745147_AddUserBatman.resx">
+      <DependentUpon>201808140745147_AddUserBatman.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
